@@ -17,7 +17,7 @@
                     Padding="10" Margin="10"
                     Command="{Binding EvaluateCommand}"/>
             <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Constraints}" 
-                      AutoGenerateColumns="False">
+                      AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.CellStyle>
                     <Style TargetType="DataGridCell">
                         <Setter Property="Padding" Value="5"/>
@@ -33,9 +33,9 @@
                     </Style>
                 </DataGrid.CellStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Constraints" Binding="{Binding Constraint.FullName}"/>
-                    <DataGridTextColumn Header="Result" Binding="{Binding Result.ResultType}"/>
-                    <DataGridTextColumn Header="Message" Binding="{Binding Result.Message}" Width="*"/>
+                    <DataGridTextColumn Header="Constraints" Binding="{Binding Constraint.FullName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Result" Binding="{Binding Result.ResultType}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Message" Binding="{Binding Result.Message}" Width="*" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
